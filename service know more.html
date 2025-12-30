@@ -3,226 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Know more about - Services</title>
+    <title>Know more about - Services | HOLDING DEVS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700;800&family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
     <style>
-        /* ================= FONTS ================= */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&family=Inter:wght@100..900&display=swap');
+        /* ================= RESET & BASE ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* ================= RESET & BASE ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        :root {
+            --bg: #0a0a0a;
+            --card-bg: #161616;
+            --border: #262626;
+            --accent: #ffffff;
+            --text-dim: #a0a0a0;
+        }
 
-:root {
-    --bg: #0a0a0a;
-    --card-bg: #161616;
-    --border: #262626;
-    --accent: #ffffff;
-    --text-dim: #a0a0a0;
-}
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
 
-body {
-    font-family: 'Inter', sans-serif;
-    color: #fff;
-    background: var(--bg);
-    line-height: 1.5;
-    padding-bottom: 50px;
-    overflow-x: hidden;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+            background: var(--bg);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-/* ================= NAVBAR ================= */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-}
+        /* ================= NAVBAR ================= */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.logo img { height: 45px; filter: invert(1); }
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: #fff;
+        }
 
-.nav-links { list-style: none; }
-.nav-links a {
-    text-decoration: none;
-    padding: 10px 24px;
-    font-weight: 600;
-    color: #fff;
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    transition: 0.3s;
-    font-size: 13px;
-    text-transform: uppercase;
-}
+        .nav-links { list-style: none; }
+        .nav-links a {
+            text-decoration: none;
+            padding: 10px 24px;
+            font-weight: 600;
+            color: #fff;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            transition: 0.3s;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
 
-.nav-links a:hover { background: #fff; color: #000; }
+        .nav-links a:hover { background: #fff; color: #000; }
 
-/* ================= BENTO GRID LAYOUT ================= */
-.container {
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 0 20px;
-}
+        /* ================= BENTO GRID LAYOUT ================= */
+        .container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+            flex: 1; /* Pushes footer down */
+        }
 
-.page-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 8vw, 70px);
-    margin-bottom: 60px;
-    text-align: center;
-}
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 8vw, 70px);
+            margin-bottom: 60px;
+            text-align: center;
+        }
 
-/* We use a 12-column grid for better "box adjustment."
-   
-*/
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 24px;
-}
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
 
-/* Common Card Styling */
-.bento-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 32px;
-    padding: 40px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
+        .bento-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 40px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
 
-.bento-card:hover {
-    border-color: #444;
-    transform: translateY(-5px);
-}
+        .bento-card:hover {
+            border-color: #444;
+            transform: translateY(-5px);
+        }
 
-/* Typography inside cards */
-.bento-card h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #fff;
-}
+        .bento-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
 
-.bento-card h3 {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-dim);
-    margin-top: 25px;
-    margin-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 8px;
-    width: fit-content;
-}
+        .bento-card h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-dim);
+            margin-top: 25px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            width: fit-content;
+        }
 
-.bento-card p, .bento-card li {
-    font-size: 15px;
-    color: var(--text-dim);
-}
+        .bento-card p, .bento-card li {
+            font-size: 15px;
+            color: var(--text-dim);
+        }
 
-.bento-card ul {
-    list-style: none;
-    padding: 0;
-}
+        .bento-card ul {
+            list-style: none;
+            padding: 0;
+        }
 
-.bento-card li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
+        .bento-card li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
 
-.bento-card li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: #fff;
-}
+        .bento-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #fff;
+        }
 
-.result-tag {
-    margin-top: auto;
-    padding-top: 30px;
-    font-weight: 600;
-    color: #fff !important;
-}
+        .result-tag {
+            margin-top: auto;
+            padding-top: 30px;
+            font-weight: 600;
+            color: #fff !important;
+        }
 
-/* ================= BOX ADJUSTMENTS (DESKTOP) ================= */
-/* Sprint takes more space (7 columns) */
-.sprint { 
-    grid-column: span 7; 
-    background: linear-gradient(145deg, #1a1a1a, #161616); 
-}
+        /* ================= GRID SPANNING ================= */
+        .sprint { grid-column: span 7; background: linear-gradient(145deg, #1a1a1a, #161616); }
+        .ops { grid-column: span 5; }
+        .outbound { grid-column: span 5; }
+        .tech { grid-column: span 7; }
+        .founder { grid-column: span 12; }
 
-/* Ops fills the remaining row (5 columns) */
-.ops { 
-    grid-column: span 5; 
-}
+        /* ================= FOOTER ================= */
+        .footer {
+            padding: 60px 0;
+            background: #000;
+            border-top: 1px solid var(--border);
+            margin-top: 100px;
+        }
 
-/* Outbound Engine (5 columns) */
-.outbound { 
-    grid-column: span 5; 
-}
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* Tech and Infra (7 columns) */
-.tech { 
-    grid-column: span 7; 
-}
+        .footer p {
+            color: var(--text-dim);
+            font-size: 14px;
+        }
 
-/* Founder Execution Partner spans the whole width for emphasis */
-.founder { 
-    grid-column: span 12; 
-}
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
 
-/* ================= RESPONSIVE ADJUSTMENTS ================= */
-@media (max-width: 1024px) {
-    .bento-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-    }
-    .sprint, .ops, .outbound, .tech, .founder { 
-        grid-column: span 1; 
-    }
-    .founder {
-        grid-column: span 2;
-    }
-}
+        .footer-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
 
-@media (max-width: 768px) {
-    .bento-grid { 
-        grid-template-columns: 1fr; 
-    }
-    .sprint, .ops, .outbound, .tech, .founder { 
-        grid-column: span 1; 
-    }
-    .container {
-        margin: 40px auto;
-    }
-    .bento-card {
-        padding: 30px;
-    }
-    .navbar {
-        padding: 16px 20px;
-    }
-}
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+            .sprint, .ops, .outbound, .tech, .founder { grid-column: span 1; }
+            .founder { grid-column: span 2; }
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid { grid-template-columns: 1fr; }
+            .sprint, .ops, .outbound, .tech, .founder { grid-column: span 1; }
+            .navbar { padding: 16px 20px; }
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
 
 <header>
     <nav class="navbar">
-        <div class="logo">
-            <img src="holding.jpg" alt="Holding Devs Logo">
-        </div>
+        <div class="logo">HOLDING DEVS //</div>
         <ul class="nav-links">
             <li><a href="index.html">Back Home</a></li>
         </ul>
@@ -233,8 +244,7 @@ header {
     <h1 class="page-title">Our Services</h1>
 
     <div class="bento-grid">
-        
-        <div class="bento-card sprint">
+        <div id="sprint" class="bento-card sprint">
             <h2>Execution Sprint</h2>
             <h3>What you get</h3>
             <ul>
@@ -247,56 +257,70 @@ header {
             <p class="result-tag"><strong>Result:</strong> Move from planning to reality in 30–60 days.</p>
         </div>
 
-        <div class="bento-card ops">
+        <div id="ops" class="bento-card ops">
             <h2>Startup Ops Retainer</h2>
-              <ul>
-                <li>A business that runs smoothly without you micromanaging</li>
+            <h3>What you get</h3>
+            <ul>
+                <li>A business that runs smoothly without micromanagement</li>
                 <li>Clear workflows, roles, and operating systems</li>
                 <li>Fewer fires, more momentum</li>
             </ul>
-            <p>We set up and manage your core operations — internal systems, workflows, tools, and execution rhythm — so your startup functions like a real company, not chaos.</p>
-            <p class="result-tag"><strong>Result:</strong> Your business runs cleaner, faster, and with less dependence on you.</p>
+            <h3>What we do</h3>
+            <p>We manage your core operations—internal systems, tools, and execution rhythm—so you function like a company, not chaos.</p>
+            <p class="result-tag"><strong>Result:</strong> Cleaner, faster business operations.</p>
         </div>
 
-        <div class="bento-card outbound">
+        <div id="outbound" class="bento-card outbound">
             <h2>Outbound Engine</h2>
-               <ul>
-                <li> Consistent conversations with the right people</li>
-                <li> Predictable lead flow instead of random wins</li>
-                <li> A system that works even when you’re not selling/li>
+            <h3>What you get</h3>
+            <ul>
+                <li>Consistent conversations with the right people</li>
+                <li>Predictable lead flow</li>
+                <li>Automated systems that work 24/7</li>
             </ul>
-                <p>We build and run outbound systems — targeting, messaging, automation, and follow-ups — focused on starting real conversations, not spam.</p>
-            
-            <p class="result-tag"><strong>Result:</strong> You wake up to replies, not uncertainty.</p>
+            <h3>What we do</h3>
+            <p>We build and run targeting, messaging, and automation systems focused on starting real human conversations.</p>
+            <p class="result-tag"><strong>Result:</strong> Wake up to replies, not uncertainty.</p>
         </div>
 
-        <div class="bento-card tech">
+        <div id="tech" class="bento-card tech">
             <h2>Tech and Infra Setup</h2>
             <h3>What you get</h3>
             <ul>
-                <li>Stable, scalable foundations without overengineering</li>
-                <li>Systems that don’t break as you grow</li>
-                <li>Peace of mind around performance and security</li>
+                <li>Stable, scalable foundations</li>
+                <li>Systems that don't break as you grow</li>
+                <li>High performance and security</li>
             </ul>
-            <p>We design and set up your technical foundation — servers, tools, integrations, and infrastructure — optimized for speed, reliability, and future scale.</p>
-            <p class="result-tag"><strong>Result:</strong> Your tech stops being a bottleneck and starts supporting growth.</p>
+            <h3>What we do</h3>
+            <p>We design servers, tools, and integrations optimized for speed, reliability, and future scale.</p>
+            <p class="result-tag"><strong>Result:</strong> Tech that supports growth instead of blocking it.</p>
         </div>
 
-        <div class="bento-card founder">
+        <div id="founder" class="bento-card founder">
             <h2>Founder Execution Partner</h2>
             <h3>What you get</h3>
             <ul>
-                <li> A second brain focused purely on execution</li>
-                <li> Faster decisions, less overwhelm</li>
-                <li> Someone who moves ideas into reality with you</li>
+                <li>A second brain focused purely on execution</li>
+                <li>Faster decisions, less overwhelm</li>
+                <li>Immediate movement from idea to reality</li>
             </ul>
             <h3>What we do</h3>
-            <p>We work directly with you to execute priorities — breaking ideas into actions, pushing execution forward, and keeping momentum high.</p>
-            <p class="result-tag"><strong>Result:</strong> You stop carrying everything alone and start moving faster.</p>
+            <p>We work directly with founders to break ideas into actions, pushing execution forward and keeping momentum high.</p>
+            <p class="result-tag"><strong>Result:</strong> Stop carrying everything alone and start moving faster.</p>
         </div>
-
     </div>
 </main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 HOLDING DEVS. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

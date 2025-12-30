@@ -204,11 +204,16 @@ body.loaded {
 }
 
 @keyframes moveGrid {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(50px, 50px); }
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(50px, 50px);
+    }
 }
 
-.hero > * {
+.hero>* {
     position: relative;
     z-index: 1;
 }
@@ -231,6 +236,7 @@ body.loaded {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -257,6 +263,7 @@ body.loaded {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -368,15 +375,24 @@ body.loaded {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.solution-card:nth-child(1) { animation-delay: 0.1s; }
-.solution-card:nth-child(2) { animation-delay: 0.2s; }
-.solution-card:nth-child(3) { animation-delay: 0.3s; }
+.solution-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.solution-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.solution-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
 
 .solution-card::before {
     content: '';
@@ -491,8 +507,13 @@ body.loaded {
 }
 
 @keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 /* ================= BENTO GRID SYSTEM ================= */
@@ -531,11 +552,25 @@ body.loaded {
     animation: fadeInUp 0.6s ease-out forwards;
 }
 
-.bento-box:nth-child(1) { animation-delay: 0.1s; }
-.bento-box:nth-child(2) { animation-delay: 0.2s; }
-.bento-box:nth-child(3) { animation-delay: 0.3s; }
-.bento-box:nth-child(4) { animation-delay: 0.4s; }
-.bento-box:nth-child(5) { animation-delay: 0.5s; }
+.bento-box:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.bento-box:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.bento-box:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.bento-box:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.bento-box:nth-child(5) {
+    animation-delay: 0.5s;
+}
 
 .bento-box::before {
     content: '';
@@ -629,10 +664,21 @@ body.loaded {
     left: 0;
 }
 
-.large { grid-column: span 8; }
-.small { grid-column: span 4; }
-.medium { grid-column: span 6; }
-.full { grid-column: span 12; }
+.large {
+    grid-column: span 8;
+}
+
+.small {
+    grid-column: span 4;
+}
+
+.medium {
+    grid-column: span 6;
+}
+
+.full {
+    grid-column: span 12;
+}
 
 .mission-box {
     background: #000000;
@@ -970,7 +1016,10 @@ body.keyboard-nav *:focus {
         grid-template-columns: 1fr;
     }
 
-    .large, .small, .medium, .full {
+    .large,
+    .small,
+    .medium,
+    .full {
         grid-column: span 1;
     }
 
@@ -996,9 +1045,11 @@ body.keyboard-nav *:focus {
     .menu-toggle.is-active .bar:nth-child(2) {
         opacity: 0;
     }
+
     .menu-toggle.is-active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
+
     .menu-toggle.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
@@ -1009,18 +1060,55 @@ body.keyboard-nav *:focus {
 }
 
 @media (max-width: 768px) {
-    .hero-title { font-size: 3.5rem; }
-    .hero-subtitle { font-size: 1rem; }
-    .navbar { padding: 15px 5%; }
-    .solutions-grid { padding: 70px 5%; }
-    .card-img-box img { height: 220px; }
-    .ticker-track span { font-size: 1.4rem; }
-    .bento-wrapper { padding: 80px 5%; }
-    .bento-box { padding: 28px; }
-    .bento-box h2 { font-size: 1.6rem; }
-    .squad-img { height: auto; max-width: 100%; }
-    .contact-section { padding: 80px 5%; }
-    .contact-subtitle { margin-bottom: 40px; }
+    .hero-title {
+        font-size: 3.5rem;
+
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .solutions-grid {
+        padding: 70px 5%;
+    }
+
+    .card-img-box img {
+        height: 220px;
+    }
+
+    .ticker-track span {
+        font-size: 1.4rem;
+    }
+
+    .bento-wrapper {
+        padding: 80px 5%;
+    }
+
+    .bento-box {
+        padding: 28px;
+    }
+
+    .bento-box h2 {
+        font-size: 1.6rem;
+    }
+
+    .squad-img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .contact-section {
+        padding: 80px 5%;
+    }
+
+    .contact-subtitle {
+        margin-bottom: 40px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1028,24 +1116,76 @@ body.keyboard-nav *:focus {
         height: auto;
         padding: 120px 5% 80px;
     }
-    .hero-title { font-size: clamp(2.4rem, 9vw, 3.2rem); line-height: 1; }
-    .badge { font-size: 10px; padding: 6px 16px; }
-    .solutions-grid { padding: 70px 5%; }
-    .card-img-box img { height: 220px; }
-    .ticker-track span { font-size: 1.4rem; }
-    .bento-wrapper { padding: 80px 5%; }
-    .bento-box { padding: 28px; }
-    .bento-box h2 { font-size: 1.6rem; }
-    .squad-img { height: auto; max-width: 100%; }
-    .contact-section { padding: 60px 5%; }
-    .contact-container { gap: 30px; }
+
+    .hero-title {
+        font-size: clamp(2.4rem, 9vw, 3.2rem);
+        line-height: 1;
+    }
+
+    .badge {
+        font-size: 10px;
+        padding: 6px 16px;
+    }
+
+    .solutions-grid {
+        padding: 70px 5%;
+    }
+
+    .card-img-box img {
+        height: 220px;
+    }
+
+    .ticker-track span {
+        font-size: 1.4rem;
+    }
+
+    .bento-wrapper {
+        padding: 80px 5%;
+    }
+
+    .bento-box {
+        padding: 28px;
+    }
+
+    .bento-box h2 {
+        font-size: 1.6rem;
+    }
+
+    .squad-img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .contact-section {
+        padding: 60px 5%;
+    }
+
+    .contact-container {
+        gap: 30px;
+    }
+
     .contact-form input,
-    .contact-form textarea { padding: 12px 14px; }
-    .submit-btn { padding: 12px 30px; }
+    .contact-form textarea {
+        padding: 12px 14px;
+    }
+
+    .submit-btn {
+        padding: 12px 30px;
+    }
 }
 
 @media (max-width: 360px) {
-    .hero-title { font-size: 2.2rem; }
-    .nav-btn, .read-btn { padding: 10px 20px; font-size: 12px; }
-    .cta-button { padding: 12px 30px; }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .nav-btn,
+    .read-btn {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .cta-button {
+        padding: 12px 30px;
+    }
 }
