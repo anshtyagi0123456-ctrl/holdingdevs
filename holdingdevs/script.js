@@ -21,7 +21,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({ 
+            target.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
@@ -35,7 +35,7 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver(function(entries) {
+const observer = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('fade-in');
@@ -55,7 +55,7 @@ const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
+
     if (scrollTop > 100) {
         navbar.style.background = 'rgba(0, 0, 0, 0.9)';
         navbar.style.borderBottomColor = '#2a2a2a';
@@ -63,7 +63,7 @@ window.addEventListener('scroll', () => {
         navbar.style.background = 'rgba(0, 0, 0, 0.7)';
         navbar.style.borderBottomColor = '#1a1a1a';
     }
-    
+
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
@@ -80,21 +80,21 @@ window.addEventListener('scroll', () => {
 const buttons = document.querySelectorAll('.cta-button, .read-btn, .nav-btn, .submit-btn');
 
 buttons.forEach(button => {
-    button.addEventListener('mouseenter', function(e) {
+    button.addEventListener('mouseenter', function (e) {
         const ripple = document.createElement('span');
         ripple.classList.add('ripple');
-        
+
         const rect = this.getBoundingClientRect();
         const size = Math.max(rect.width, rect.height);
         const x = e.clientX - rect.left - size / 2;
         const y = e.clientY - rect.top - size / 2;
-        
+
         ripple.style.width = ripple.style.height = size + 'px';
         ripple.style.left = x + 'px';
         ripple.style.top = y + 'px';
-        
+
         this.appendChild(ripple);
-        
+
         setTimeout(() => ripple.remove(), 600);
     });
 });
@@ -104,7 +104,7 @@ const createProgressBar = () => {
     const progressBar = document.createElement('div');
     progressBar.classList.add('scroll-progress');
     document.body.appendChild(progressBar);
-    
+
     window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -121,16 +121,16 @@ const sections = document.querySelectorAll('section[id]');
 
 window.addEventListener('scroll', () => {
     let current = '';
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        
+
         if (pageYOffset >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
-    
+
     navItems.forEach(item => {
         item.classList.remove('active');
         if (item.getAttribute('href').slice(1) === current) {
@@ -153,7 +153,7 @@ if ('IntersectionObserver' in window) {
             }
         });
     });
-    
+
     images.forEach(img => imageObserver.observe(img));
 }
 
@@ -164,23 +164,23 @@ const successMessage = document.getElementById('successMessage');
 if (contactForm) {
     // Real-time validation
     const inputs = contactForm.querySelectorAll('input, textarea');
-    
+
     inputs.forEach(input => {
         input.addEventListener('blur', () => {
             validateField(input);
         });
-        
+
         input.addEventListener('input', () => {
             if (input.classList.contains('error')) {
                 validateField(input);
             }
         });
     });
-    
+
     // Form submission
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         // Validate all fields
         let isValid = true;
         inputs.forEach(input => {
@@ -188,11 +188,11 @@ if (contactForm) {
                 isValid = false;
             }
         });
-        
+
         if (!isValid) {
             return;
         }
-        
+
         // Get form data
         const formData = new FormData(contactForm);
         const data = {
@@ -201,21 +201,21 @@ if (contactForm) {
             subject: formData.get('subject'),
             message: formData.get('message')
         };
-        
+
         // Send email via mailto (for Gmail)
         const mailtoLink = `mailto:hello@holdingdevs.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`)}`;
-        
+
         // Show success message
         contactForm.style.opacity = '0';
         contactForm.style.pointerEvents = 'none';
         successMessage.classList.add('show');
-        
+
         // Reset form
         contactForm.reset();
-        
+
         // Open email client
         window.location.href = mailtoLink;
-        
+
         // Hide success message after 5 seconds
         setTimeout(() => {
             successMessage.classList.remove('show');
@@ -230,7 +230,7 @@ function validateField(field) {
     const errorSpan = field.parentElement.querySelector('.form-error');
     let isValid = true;
     let errorMessage = '';
-    
+
     if (!field.value.trim()) {
         isValid = false;
         errorMessage = 'This field is required';
@@ -241,7 +241,7 @@ function validateField(field) {
             errorMessage = 'Please enter a valid email address';
         }
     }
-    
+
     if (isValid) {
         field.classList.remove('error');
         if (errorSpan) errorSpan.textContent = '';
@@ -249,7 +249,7 @@ function validateField(field) {
         field.classList.add('error');
         if (errorSpan) errorSpan.textContent = errorMessage;
     }
-    
+
     return isValid;
 }
 

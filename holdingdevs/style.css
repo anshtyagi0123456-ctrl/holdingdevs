@@ -162,6 +162,7 @@ body.loaded {
 
 /* Mobile Toggle Icon */
 .menu-toggle {
+    background-color: transparent !important;
     display: none;
     cursor: pointer;
     flex-direction: column;
@@ -173,6 +174,7 @@ body.loaded {
     width: 25px;
     height: 2px;
     background-color: #ffffff;
+    color: black;
     transition: var(--transition);
 }
 
@@ -983,6 +985,103 @@ body.keyboard-nav *:focus {
     outline-offset: 2px;
 }
 
+.founder-i {
+    height: 250px;
+    width: 250px;
+    border-radius: 125px;
+}
+
+/* ================= FOUNDER MESSAGE SECTION ================= */
+#founder-message {
+    padding: 100px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+#founder-message .founder-card {
+    display: flex;
+    gap: 60px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+#founder-message .founder-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: #555;
+}
+
+.founder-img-box {
+    flex: 0 0 250px;
+    text-align: center;
+}
+
+.founder-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #ffffff20;
+    transition: var(--transition);
+}
+
+.founder-img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+.founder-info {
+    flex: 1;
+}
+
+.founder-info h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.founder-info p {
+    font-size: 0.95rem;
+    color: var(--dim);
+}
+
+.founder-content h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem;
+    margin: 10px 0 20px;
+    line-height: 1.2;
+}
+
+.message-text p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: var(--dim);
+    font-size: 1rem;
+}
+
+.founder-signature {
+    margin-top: 30px;
+}
+
+.founder-signature p {
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.sig-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
     .menu-toggle {
@@ -1054,6 +1153,21 @@ body.keyboard-nav *:focus {
         transform: translateY(-8px) rotate(-45deg);
     }
 
+    #founder-message .founder-card {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .founder-img-box {
+        flex: unset;
+        margin: 0 auto;
+    }
+
+    .founder-img {
+        width: 200px;
+        height: 200px;
+    }
+
     .footer-content {
         flex-direction: column;
     }
@@ -1109,6 +1223,15 @@ body.keyboard-nav *:focus {
     .contact-subtitle {
         margin-bottom: 40px;
     }
+
+    .founder-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .message-text p {
+        font-size: 0.95rem;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -1171,6 +1294,19 @@ body.keyboard-nav *:focus {
 
     .submit-btn {
         padding: 12px 30px;
+    }
+
+    .founder-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .founder-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .message-text p {
+        font-size: 0.9rem;
     }
 }
 
