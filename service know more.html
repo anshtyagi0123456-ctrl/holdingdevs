@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore HOLDING DEVS services including execution sprints, startup operations, outbound systems, tech infrastructure, and founder execution support to scale your business faster.">
     <title>Know more about - Services | HOLDING DEVS</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700;800&family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
     <style>
@@ -85,7 +87,7 @@
             max-width: 1200px;
             margin: 80px auto;
             padding: 0 20px;
-            flex: 1; /* Pushes footer down */
+            flex: 1; 
         }
 
         .page-title {
@@ -235,7 +237,7 @@
     <nav class="navbar">
         <div class="logo">HOLDING DEVS //</div>
         <ul class="nav-links">
-            <li><a href="index.html">Back Home</a></li>
+            <li><a href="index.html">Back</a></li>
         </ul>
     </nav>
 </header>
@@ -321,6 +323,22 @@
         </div>
     </div>
 </footer>
+
+<script>
+    // Handles smooth scrolling when landing on the page from a link with a hash (#)
+    window.addEventListener('load', () => {
+        if (window.location.hash) {
+            const targetId = window.location.hash;
+            const element = document.querySelector(targetId);
+            if (element) {
+                // Short delay ensures the browser has finished initial layout rendering
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+    });
+</script>
 
 </body>
 </html>

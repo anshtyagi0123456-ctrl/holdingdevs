@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Review the Terms of Service for HOLDING DEVS, outlining service engagement, intellectual property rights, and liability for our digital and execution services.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service | HOLDING DEVS</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <style>
@@ -26,13 +28,16 @@
             padding: 20px 5%;
             background: rgba(0, 0, 0, 0.9);
             border-bottom: 1px solid var(--border);
-            position: fixed;
-            width: 100%;
+            position: sticky; /* changed from fixed */
             top: 0;
             z-index: 1000;
         }
-        .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; }
-        .container {
+        .logo { 
+            font-family: 'Syne', sans-serif; 
+            font-weight: 800; 
+            font-size: 1.2rem; 
+        }
+        main.container {
             max-width: 900px;
             margin: 120px auto 60px;
             padding: 0 5%;
@@ -43,9 +48,20 @@
             padding: 50px;
             border-radius: 4px;
         }
-        h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 40px; }
-        h3 { font-family: 'Syne', sans-serif; margin-top: 30px; color: var(--text); }
-        p { color: var(--dim); margin-bottom: 20px; }
+        h1 { 
+            font-family: 'Syne', sans-serif; 
+            font-size: clamp(2rem, 5vw, 3.5rem); 
+            margin-bottom: 40px; 
+        }
+        h2 { 
+            font-family: 'Syne', sans-serif; 
+            margin-top: 30px; 
+            color: var(--text); 
+        }
+        p { 
+            color: var(--dim); 
+            margin-bottom: 20px; 
+        }
         .back-btn {
             display: inline-block;
             margin-top: 30px;
@@ -56,32 +72,40 @@
             font-weight: 600;
             transition: 0.3s;
         }
-        .back-btn:hover { background: var(--text); color: var(--bg); }
-        footer { text-align: center; padding: 40px; color: var(--dim); border-top: 1px solid var(--border); }
+        .back-btn:hover { 
+            background: var(--text); 
+            color: var(--bg); 
+        }
+        footer { 
+            text-align: center; 
+            padding: 40px; 
+            color: var(--dim); 
+            border-top: 1px solid var(--border); 
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">HOLDING DEVS //</div>
-    </nav>
+    <header>
+        <nav class="navbar">
+            <div class="logo">HOLDING DEVS //</div>
+        </nav>
+    </header>
 
-    <div class="container">
+    <main class="container">
         <h1>Terms of Service</h1>
         <div class="content-box">
-            <p><strong>Last Updated:</strong> December 2024</p>
-            
-            <h3>1. Engagement</h3>
+            <h2>1. Engagement</h2>
             <p>By contacting us, you agree to provide accurate information regarding your project. Our services are provided based on the specific scope outlined in individual agreements.</p>
-            
-            <h3>2. Intellectual Property</h3>
+
+            <h2>2. Intellectual Property</h2>
             <p>All software, designs, and strategies developed by HOLDING DEVS remain our property until full payment is received, at which point ownership transfers to the client.</p>
-            
-            <h3>3. Liability</h3>
+
+            <h2>3. Liability</h2>
             <p>We are not liable for any indirect or consequential losses resulting from the use of our technical infrastructure or execution sprints.</p>
-            
+
             <a href="index.html" class="back-btn">Return Home</a>
         </div>
-    </div>
+    </main>
 
     <footer>&copy; 2024 HOLDING DEVS. All rights reserved.</footer>
 </body>
