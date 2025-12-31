@@ -632,6 +632,7 @@ body.loaded {
     color: #000000;
     text-decoration: none;
     padding: 12px 30px;
+    margin: 15px 0px;
     border-radius: 100px;
     font-weight: 700;
     font-size: 13px;
@@ -1315,10 +1316,15 @@ body.keyboard-nav *:focus {
         font-size: 2.2rem;
     }
 
-    .nav-btn,
-    .read-btn {
+    .nav-btn {
         padding: 10px 20px;
         font-size: 12px;
+       
+    }
+    .read-btn{
+         padding: 10px 20px;
+        font-size: 12px;
+        margin: 15px 0px;
     }
 
     .cta-button {
