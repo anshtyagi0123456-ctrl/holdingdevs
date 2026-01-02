@@ -854,6 +854,7 @@ body.loaded {
 
 .form-success-message.show {
     display: block;
+    opacity: 1;
 }
 
 .form-success-message p {
