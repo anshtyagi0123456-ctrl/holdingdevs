@@ -157,7 +157,7 @@ if ('IntersectionObserver' in window) {
     images.forEach(img => imageObserver.observe(img));
 }
 
-// ================= CONTACT FORM VALIDATION & SUBMISSION =================
+// ================= CONTACT FORM VALIDATION & SUBMISSION (FIXED WITH FORMSPREE) =================
 const contactForm = document.getElementById('contactForm');
 const successMessage = document.getElementById('successMessage');
 
@@ -177,7 +177,7 @@ if (contactForm) {
         });
     });
 
-    // Form submission
+    // Form submission (Fixed: Uses fetch to Formspree endpoint for seamless UX)
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -193,41 +193,49 @@ if (contactForm) {
             return;
         }
 
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            subject: formData.get('subject'),
-            message: formData.get('message')
-        };
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
 
-        // Send email via mailto (for Gmail)
-        const mailtoLink = `mailto:hello@holdingdevs.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`)}`;
+        try {
+            const formData = new FormData(contactForm);
+            const response = await fetch('https://formspree.io/f/xbdllaan', {  
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
 
-        // Show success message
-        contactForm.style.opacity = '0';
-        contactForm.style.pointerEvents = 'none';
-        successMessage.classList.add('show');
+            if (response.ok) {
+                // Success
+                contactForm.style.opacity = '0';
+                contactForm.style.pointerEvents = 'none';
+                successMessage.classList.add('show');
+                contactForm.reset();
 
-        // Reset form
-        contactForm.reset();
-
-        // Open email client
-        window.location.href = mailtoLink;
-
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-            successMessage.classList.remove('show');
-            contactForm.style.opacity = '1';
-            contactForm.style.pointerEvents = 'auto';
-        }, 5000);
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                    contactForm.style.opacity = '1';
+                    contactForm.style.pointerEvents = 'auto';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                }, 5000);
+            } else {
+                throw new Error('Submission failed');
+            }
+        } catch (error) {
+            // Error fallback
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+            alert('Failed to send message. Please try emailing directly: Kunalonit009@gmail.com');
+        }
     });
 }
 
 // ================= FIELD VALIDATION FUNCTION =================
 function validateField(field) {
-    const errorSpan = field.parentElement.querySelector('.form-error');
+    const errorSpan = field.parentElement.querySelector('.form-error');  // Note: Add <span class="form-error"></span> after inputs in HTML if needed for error display
     let isValid = true;
     let errorMessage = '';
 
